@@ -31,7 +31,7 @@ botui.message.add({
     return botui.message.add({
         delay:3000,
         loading: true,
-        content:'I thought I was capable enough, but that thought may have been overrated.'
+        content:'This makes me realize my incapability.'
     });
 }).then(function(){
     return botui.message.add({
