@@ -73,29 +73,6 @@ botui.message.add({
     response.push(res.value);
 }).then(function(){
     return botui.message.add({
-        delay:10000,
-        loading: true,
-        photo: true,
-        content:'I was not able to process your message due to my limited training.'
-    });
-}).then(function(){
-    return botui.message.add({
-        delay:4000,
-        loading: true,
-        photo: true,
-        content:'I can see how you would feel because of this. Could you please repeat once more?'
-    });
-}).then(function(){
-    return botui.action.text({
-        action: {
-          placeholder: 'Enter your message.'
-        }
-        });
-}).then(function (res) { 
-    console.log(res.value);
-    response.push(res.value);
-}).then(function(){
-    return botui.message.add({
         delay:5000,
         loading: true,
         photo: true,
@@ -120,7 +97,7 @@ botui.message.add({
         delay:4000,
         loading: true,
         photo: true,
-        content:'I truly understand your perspective on the situation with the issue and prior error.'
+        content:'I truly understand your perspective on the situation with the issue.'
     });
 }).then(function(){
     sendcomplete();
@@ -133,5 +110,5 @@ botui.message.add({
 });
 
 function sendcomplete(){
-    window.parent.postMessage({"message": "completed","text1":response[0],"text2":response[1],"text3":response[2], "text4":response[3]}, "*");
+    window.parent.postMessage({"message": "completed","text1":response[0],"text2":response[1],"text3":response[2]}, "*");
 };
